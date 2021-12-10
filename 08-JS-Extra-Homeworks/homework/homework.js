@@ -10,6 +10,14 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var matriz = []
+  for(let propiedad in objeto){
+    var arr = []
+    arr.push(propiedad)
+    arr.push(objeto[propiedad])
+    matriz.push(arr)
+  }
+  return matriz
 }
 
 
@@ -18,6 +26,12 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj ={}
+  for (let i = 0; i < string.length; i++){
+    if (obj[string[i]] === undefined) obj [string[i]] = 1
+    else obj [string[i]]++
+  }
+  return obj
 }
 
 
@@ -50,6 +64,18 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  const abc = ["a","b","c"]
+  
+  var arraySinA = arr.filter(function (letra) {
+    return letra !== "a"
+  })
+  var arraySinAB = arr.filter(function (letra) {
+    return letra !== "b"
+  })
+  var arraySinABC = arr.filter(function (letra) {
+    return letra !== "c"
+  })
+  return arraySinABC.join("")
 }
 
 
@@ -66,6 +92,14 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var interseccion = []
+
+  arreglo1.forEach(function (number){
+    if (arreglo2.includes(number)){
+      interseccion.push(number)
+    }
+  })
+  return interseccion
 }
 
 
